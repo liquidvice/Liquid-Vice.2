@@ -339,7 +339,7 @@
             div.style.margin = "8px 0";
             div.innerHTML = `
               ${p.nombre} x${p.cantidad} - $${p.precio * p.cantidad}
-              <button onclick="eliminarPorNombre('${p.nombre.replace(/'/g, "\\'")}')" style="margin-left: 8px; padding: 4px 8px; background: #e74c3c; border: none; color: white; border-radius: 4px;">❌</button>
+              <button onclick="eliminarPorNombre('${p.nombre.replace(/'/g, "\\'")}')" style="margin-left: 8px; padding: 4px 8px; background: white; border: none; color: white; border-radius: 4px;">❌</button>
             `;
             items.appendChild(div);
           });
