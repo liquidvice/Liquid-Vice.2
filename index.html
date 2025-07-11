@@ -366,24 +366,24 @@
       }
     }
 
-    function finalizarCompra() {
-      if (carrito.length === 0) {
-        alert("El carrito está vacío.");
-        return;
-      }
+  function finalizarCompra() {
+  if (carrito.length === 0) {
+    alert("El carrito está vacío.");
+    return;
+  }
 
-      let mensaje = "¡Hola! Quiero hacer un pedido:\n\n";
-      carrito.forEach(p => {
-        mensaje += `• ${p.nombre.replace(/[*_~]/g, '')} x${p.cantidad} = $${p.precio * p.cantidad}\n`;
-      });
+  let mensaje = "¡Hola! Quiero hacer un pedido:\n\n";
+  carrito.forEach(p => {
+    mensaje += `• ${p.nombre.replace(/[*_~]/g, '')} x${p.cantidad} = $${p.precio * p.cantidad}\n`;
+  });
 
-      const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
-      mensaje += `\n💰 *Total: $${total.toLocaleString('es-AR')}*`;
+  const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
+  mensaje += `\n💰 *Total: $${total.toLocaleString('es-AR')}*`;
 
-      const telefono = "5493492247741";
-      window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`, '_blank');
-    }
-
+  const telefono = "5493492247741";
+  window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+    
     function toggleCarrito() {
       const carritoDiv = document.getElementById("carrito");
       carritoDiv.style.display = carritoDiv.style.display === "none" ? "block" : "none";
